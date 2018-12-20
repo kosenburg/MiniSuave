@@ -1,19 +1,28 @@
 ﻿// Learn more about F# at http://fsharp.org
 
-open System
 open Suave.Http
 open Suave
 open Combinators
 open Filters
-open Suave
+
+
 
 [<EntryPoint>]
 let main argv =
     let request = { Route = ""; Type = Suave.Http.GET }
     let response = { Content = ""; StatusCode = 200 }
-    let context = {Request = request; Response = response}
-    
-    Console.executeInLoop context (GET >=> Path "/hello" >=> Successful.OK "hello") 
+    let context = { Request = request; Response = response }
+
+    let app = Choose [
+        GET >=> Path "/hello" >=> Successful.OK "Hello GET"
+        POST >=> Path "/hello" >=> Successful.OK "Hello Post"
+        Path "/foo" >=> Choose [
+            GET >=> Successful.OK "Foo GET"
+            POST >=> Successful.OK "Foo POST"
+        ]
+    ]
+
+    Console.executeInLoop context app
 
 
 
