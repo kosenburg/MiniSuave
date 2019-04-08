@@ -1,6 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MiniSuave", "MiniSuave\MiniSuave.fsproj", "{B8C31616-8EC8-46DA-9C9C-EABC42B1F00B}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "MiniSuave", "MiniSuave\MiniSuave.fsproj", "{B8C31616-8EC8-46DA-9C9C-EABC42B1F00B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E7F196C-D382-4C6F-A376-F81DDA73F4FC}"
+	ProjectSection(SolutionItems) = preProject
+		Jenkinsfile.txt = Jenkinsfile.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +20,11 @@ Global
 		{B8C31616-8EC8-46DA-9C9C-EABC42B1F00B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8C31616-8EC8-46DA-9C9C-EABC42B1F00B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8C31616-8EC8-46DA-9C9C-EABC42B1F00B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A573258-FC83-4A8C-A22F-D588B2135F5E}
 	EndGlobalSection
 EndGlobal
