@@ -1,4 +1,4 @@
-@Library('demo-shared-lib@sidebranch')_
+@Library('demo-shared-lib@development')_
 
 stage('Demo') {
     echo "Hello world"
