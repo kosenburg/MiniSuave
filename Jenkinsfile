@@ -27,6 +27,11 @@ pipeline{
                 }
             }
         }
+        stage("B") {
+            steps {
+                def scmVars = checkout scm
+            }
+        }
     }
     post{
         always{
