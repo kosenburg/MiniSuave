@@ -2,7 +2,7 @@
 
 stage('Demo') {
     withCredentials([usernamePassword(credentialsId: 'keypair', passwordVariable: 'password', usernameVariable: 'username')]) {
-        sayHello usernameVariable
+        sayHello username
     }
 
     echo "Hello world"
