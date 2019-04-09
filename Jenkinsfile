@@ -29,7 +29,7 @@ pipeline{
         }
         stage("B") {
             steps {
-                def scmVars = checkout scm
+                checkout scm
             }
         }
     }
