@@ -30,6 +30,9 @@ pipeline{
         stage("B") {
             steps {
                 checkout scm
+                    dir('MiniSuave/MiniSuave') {
+                        bat label: '', script: 'dotnet build'
+                    }
             }
         }
     }
