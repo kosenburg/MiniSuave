@@ -35,9 +35,11 @@ pipeline{
             }
         }
         stage('C') {
-            dir('newDir') {
-                unstash 'infraSource'
-                def version = readFile "./infra/development/config.template.yml"
+            steps {
+                dir('newDir') {
+                    unstash 'infraSource'
+                    def version = readFile "./infra/development/config.template.yml"
+                }
             }
         }
     }
