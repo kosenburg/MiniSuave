@@ -13,6 +13,7 @@ pipeline{
                     }
 
                     echo "Hello world"
+                
                     sayHello 'Dave'
             }
             post{
@@ -30,7 +31,13 @@ pipeline{
         stage("B") {
             steps {
                 checkout scm
-                bat label: '', script: 'dotnet build'
+                stash includes:"./infra/**/*", name: 'infraSource' 
+            }
+        }
+        stage('C') {
+            dir('newDir') {
+                unstash 'infraSource'
+                def version = readFile "./infra/development/config.template.yml"
             }
         }
     }
