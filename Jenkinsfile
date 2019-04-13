@@ -31,7 +31,7 @@ pipeline{
         stage("B") {
             steps {
                 checkout scm
-                stash includes:"./infra/**/*", name: 'infraSource' 
+                stash includes:"/infra/", name: 'infraSource' 
             }
         }
         stage('C') {
