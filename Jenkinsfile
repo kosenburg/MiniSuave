@@ -38,7 +38,7 @@ pipeline{
             steps {
                 dir('newDir') {
                     unstash 'infraSource'
-                    def version = readFile "./infra/development/config.template.yml"
+                    readFile "./infra/development/config.template.yml"
                 }
             }
         }
